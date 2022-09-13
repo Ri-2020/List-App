@@ -27,7 +27,10 @@ class ProductPage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 10,
+              ),
               child: Text(
                 "${productData[index]["title"]}",
                 style: const TextStyle(
@@ -58,23 +61,55 @@ class ProductPage extends StatelessWidget {
           ],
         ),
         Positioned(
-          bottom: 20,
-          right: size.width * 0.35,
+          bottom: 0,
           child: Container(
-            padding: const EdgeInsets.all(20),
             decoration: const BoxDecoration(
-              color: Colors.blueGrey,
-              borderRadius: BorderRadius.all(
-                Radius.circular(20),
-              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 3,
+                  spreadRadius: 1,
+                ),
+              ],
             ),
-            child: const Text(
-              "Add to Cart",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-              ),
+            child: Row(
+              children: [
+                Container(
+                  width: size.width * 0.5,
+                  padding: const EdgeInsets.all(20),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Add to Cart",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: size.width * 0.5,
+                  padding: const EdgeInsets.all(20),
+                  decoration: const BoxDecoration(
+                    color: Colors.blueGrey,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Buy Now",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         )
