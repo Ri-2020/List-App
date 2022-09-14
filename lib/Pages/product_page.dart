@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:list/constants/data.dart';
+import 'package:get/get.dart';
 
 class ProductPage extends StatelessWidget {
-  final Size size;
-  final int index;
   const ProductPage({
     Key? key,
-    required this.size,
-    required this.index,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final productData = Get.arguments['productData']; // someInfo
+    final size = Get.arguments["size"];
     return Scaffold(
       appBar: AppBar(
-        title: Text("${productData[index]["title"]}"),
+        title: Text("${productData["title"]}"),
       ),
       body: Stack(children: [
         ListView(
           children: [
             ClipRRect(
               child: Image.network(
-                "${productData[index]["imageUrl"]}",
+                "${productData["imageUrl"]}",
                 width: size.width,
                 fit: BoxFit.cover,
               ),
@@ -32,7 +31,7 @@ class ProductPage extends StatelessWidget {
                 vertical: 10,
               ),
               child: Text(
-                "${productData[index]["title"]}",
+                "${productData["title"]}",
                 style: const TextStyle(
                   fontSize: 30,
                   color: Colors.blue,
@@ -49,7 +48,7 @@ class ProductPage extends StatelessWidget {
               child: RichText(
                 textAlign: TextAlign.justify,
                 text: TextSpan(
-                  text: "${productData[index]["description"]}",
+                  text: "${productData["description"]}",
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 20,

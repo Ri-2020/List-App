@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:list/constants/data.dart';
 import 'package:list/Pages/product_page.dart';
-import 'dart:developer' as developer;
+// import 'dart:developer' as developer;
 
 import 'package:list/constants/utils.dart';
 
@@ -18,14 +19,13 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ProductPage(
-              size: size,
-              index: index,
-            ),
-          ),
+        Get.to(
+          const ProductPage(),
+          arguments: {
+            "productData": productData[index],
+            "size": size,
+          },
+          transition: Transition.cupertino,
         );
       },
       child: Container(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:list/constants/data.dart';
 import 'package:list/Components/product_card.dart';
+import 'package:get/get.dart';
 
+// getX
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
 
