@@ -17,6 +17,7 @@ class ProductModel {
   String? slug;
   String? slug2;
   Gallery? gallery;
+
   int? ratings;
 
   ProductModel(

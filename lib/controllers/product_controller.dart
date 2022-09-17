@@ -6,5 +6,6 @@ class ProductController extends GetxController {
 
   addProducts(ProductModel product) async {
     products.add(product);
+    update();
   }
 }
