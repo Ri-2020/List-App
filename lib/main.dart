@@ -11,6 +11,7 @@ appRoutes() => [
     ];
 
 void main() {
+// initilize widget bingings here
   runApp(const MyApp());
 }
 
